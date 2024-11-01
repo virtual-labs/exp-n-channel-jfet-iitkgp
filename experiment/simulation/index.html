@@ -1,116 +1,127 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!--html tag start-->
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Output Characteristics of n-channel JFET</title>
-
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom CSS -->
-    <link href="../css/adik.css" rel="stylesheet">
    
-
-    <!-- jQuery and jQuery UI -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+    
+    <!-- jQuery UI CSS -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
 
-    <!-- MathJax -->
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-	
+    <!-- Your HTML Content Goes Here -->
 
-    <!-- Math.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.min.js"></script>
-
-    <!-- jQuery Knob -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
-
-    <!-- CanvasJS -->
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
- 
-   
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
+    <!-- Bootstrap JS Bundle (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery UI JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <!-- MathJax for rendering math expressions -->
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
+    
+    <!-- Math.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.min.js"></script>
+    
+    <!-- Additional Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    
+   
+
+  <style>
+		canvas {
+	
+	max-width:100%;
+	}
+	.dnob {
+	
+position: absolute;
+cursor:pointer;
+    border: 2px solid #212221;
+    border-radius: 50%;
+    background-color: #040605;
+    background-image: linear-gradient(90deg, #8c958d, #d7e9da);
+    box-shadow: 5px 5px 8px #D9DBDB;
+}
+
+.dh {
+	
+position:absolute;
+cursor:pointer;
+background-color: black;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow:  0 0 20px #fff, 0 0 30px #0867DF;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #023474;
+  }
+
+
+
+.container 
+
+        .plot-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .inputs-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .input-group {
+            margin: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+     }
+    </style>
+  
+  
 </head>
 <body><!--body tag start-->
-    <div class="container p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
-        <div class="row"><!--First row under 1st container start-->
-            <div class="col-md-3"><!--First col under 1st row start-->
-                <img class="img-fluid rounded" src="./images/vlabs.png" alt="VLabs logo">
-            </div><!--First col under 1st row end-->
-            <div class="col-md-6"><!--2nd col under 1st row start-->
-                <p class="display-1"> <b> Virtual Labs <br> IIT Kharagpur </b> </p>
-            </div><!--2nd col under 1st row end-->
-            <div class="col-md-3"><!--3rd col under 1st row start-->
-                <img class="img-fluid rounded" src="./images/iitkgp.png" alt="IIT KGP Logo" >
-            </div><!--3rd col under 1st row end-->
-        </div><!--First row under 1st container end-->
-    
-        <hr>
-        <div class="row"><!--2nd row under 1st container start-->
-            <div class="col-md-3"><!--First col under 2nd row start-->
-
-            </div><!--First col under 2nd row end-->
-            <div class="col-md-6"><!--2nd col under 2nd row start-->
-                <p class="h1"> <b>Output or Drain Characteristics of n-channel JFET</b> </p>
-            </div><!--2nd col under 2nd row end-->
-            <div class="col-md-3"><!--3rd col under 2nd row start-->
-
-            </div><!--3rd col under 2nd row end-->
-        </div><!--2nd row under 1st container end-->
-        <hr>
-        <div class="d-flex p-1 text-primary"><!--3rd row under 1st container start-->
-          <div class="p-1" > <p class="h4"><a href="../index.html"> <span class="LN"> <b> Microelectronics and VLSI Engineering Laboratory </b></span> --> </a></p></div>
-          <div class="p-1"> <p class="h4"><a href="./index.html"> <span class="ExpN"> <b> Output or Drain Characteristics of n-channel JFET</b> </span> </a></p></div>
-        </div><!--3rd row under 1st container end-->
-    </div><!--First Container under body tag end-->
-    
-    <div class="container p-3 my-5 text-primary text-center border"><!--2nd Container under body tag start-->
-        <div class="row"><!--First row under 2nd container start-->
-
-            <ul class="nav nav-pills nav-justified">
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html">Introduction</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../aim.html">Objective</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../prequiz.html">Pre Quiz</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../theory.html">Theory</a>
-                </li>
-				<li class="nav-item">
-                  <a class="nav-link" href="../procedure.html">Procedure</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="./index.html">Simulation</a>
-                  </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../postquiz.html">Post Quiz</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../feedback.html">Feedback</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../references.html">References</a>
-                  </li>
-
-              </ul>
-        </div><!--First row under 2nd container end-->
-    </div><!--2nd Container under body tag end-->
-	
-    <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
+   
+      <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
       <div class="row"><!--First row under 3rd container start-->
         <div class="col-md-1"></div><!--First col under 3rd container start& end-->
         <div class="col-md-10"><!--2nd col under 3rd container start-->
@@ -165,11 +176,11 @@
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
   });
 </script>
-<script type="text/javascript" src="./ncjs/MathJax.js"></script>
+<script type="text/javascript" src="./js/MathJax.js"></script>
 	
 
-<script language="javascript" type="text/javascript" src="./ncjs/jquery.js"></script>
-<script language="javascript" type="text/javascript" src="./ncjs/jquery.flot.min.js"></script>
+<script language="javascript" type="text/javascript" src="./js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
 
 <script language="JavaScript">
 
@@ -257,7 +268,41 @@ td.gray {background-color:cccccc}
 
 
 <table align="center"><tbody><tr><td>
-<table><tbody><tr><td><i>I<sub>D</sub></i>&nbsp;[mA]</td><td><div id="placeholder" style="width: 500px; height: 400px; padding: 0px; position: relative;"><canvas class="flot-base" width="500" height="400" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 500px; height: 400px;"></canvas><div class="flot-text" style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 27px; text-align: center;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 73px; text-align: center;">1</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 119px; text-align: center;">2</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 165px; text-align: center;">3</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 211px; text-align: center;">4</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 258px; text-align: center;">5</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 304px; text-align: center;">6</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 350px; text-align: center;">7</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 396px; text-align: center;">8</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 442px; text-align: center;">9</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 45px; top: 382px; left: 486px; text-align: center;">10</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 369px; left: 2px; text-align: right;">0.00</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 308px; left: 2px; text-align: right;">0.02</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 246px; left: 2px; text-align: right;">0.04</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 185px; left: 2px; text-align: right;">0.06</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 123px; left: 2px; text-align: right;">0.08</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 61px; left: 2px; text-align: right;">0.10</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 2px; text-align: right;">0.12</div></div></div><canvas class="flot-overlay" width="500" height="400" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 500px; height: 400px;"></canvas></div></td></tr>
+<table><tbody>
+<tr>
+    <td><i>I<sub>D</sub></i> [mA]</td>
+    <td>
+        <div id="placeholder" style="width: 500px; height: 400px; position: relative;">
+            <canvas class="flot-base" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
+            <div class="flot-text" style="position: absolute; inset: 0; font-size: smaller; color: rgb(84, 84, 84);">
+                <div class="flot-x-axis xAxis" style="position: absolute; inset: 0; display: block;">
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 27px;">0</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 73px;">1</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 119px;">2</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 165px;">3</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 211px;">4</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 258px;">5</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 304px;">6</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 350px;">7</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 396px;">8</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 442px;">9</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 486px;">10</div>
+                </div>
+                <div class="flot-y-axis yAxis" style="position: absolute; inset: 0; display: block;">
+                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 369px; text-align: right;">0.00</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 308px; text-align: right;">0.02</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 246px; text-align: right;">0.04</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 185px; text-align: right;">0.06</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 123px; text-align: right;">0.08</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 61px; text-align: right;">0.10</div>
+                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 0; text-align: right;">0.12</div>
+                </div>
+            </div>
+            <canvas class="flot-overlay" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
+        </div>
+    </td>
+</tr>
+
 <tr><td></td><td><p style="text-align:center"><i>V<sub>D</sub></i> [V]</p></td></tr></tbody></table>
 </td><td>
 <form name="data">
@@ -565,7 +610,88 @@ td.gray {background-color:cccccc}
 
 </td></tr></tbody></table>
 <hr>
-<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-24-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-393" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-394" class="mjx-mrow"><span id="MJXc-Node-395" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.026em;"><span id="MJXc-Node-396" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.026em;">E</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-397" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em; padding-right: 0.003em;">g</span></span></span></span><span id="MJXc-Node-398" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>E</mi><mi>g</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-24">E_g=</script> <span id="Eg_txt">1.12</span> eV;  <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-25-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-399" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-400" class="mjx-mrow"><span id="MJXc-Node-401" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-402" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">n</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-403" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em;">i</span></span></span></span><span id="MJXc-Node-404" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mi>i</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-25">n_i=</script> <span id="ni_txt">6.41e+9</span> cm<sup>-3</sup>;  <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-26-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-405" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-406" class="mjx-mrow"><span id="MJXc-Node-407" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.186em;"><span id="MJXc-Node-408" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em; padding-right: 0.186em;">V</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.219em; padding-right: 0.071em;"><span id="MJXc-Node-409" class="mjx-texatom" style=""><span id="MJXc-Node-410" class="mjx-mrow"><span id="MJXc-Node-411" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.498em; padding-bottom: 0.313em;">b</span></span><span id="MJXc-Node-412" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em;">i</span></span></span></span></span></span><span id="MJXc-Node-413" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>V</mi><mrow class="MJX-TeXAtom-ORD"><mi>b</mi><mi>i</mi></mrow></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-26">V_{bi}=</script> <span id="Vbi_txt">0.856</span> V;  <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-27-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-414" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-415" class="mjx-mrow"><span id="MJXc-Node-416" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.064em;"><span id="MJXc-Node-417" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.064em;">I</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-418" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em;">p</span></span></span></span><span id="MJXc-Node-419" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>I</mi><mi>p</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-27">I_p=</script> <span id="Ip_txt">0.000444</span> A;  <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-28-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-420" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-421" class="mjx-mrow"><span id="MJXc-Node-422" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.186em;"><span id="MJXc-Node-423" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em; padding-right: 0.186em;">V</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-424" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em;">p</span></span></span></span><span id="MJXc-Node-425" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>V</mi><mi>p</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-28">V_p=</script> <span id="Vp_txt">6.84</span> V.
+<p>
+    <span id="MathJax-Element-24-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 101%; position: relative;">
+        <span class="mjx-math" aria-hidden="true">
+            <span class="mjx-msubsup">
+                <span class="mjx-mi">E<sub>g</sub></span>
+                
+            </span>
+            <span class="mjx-mo">=</span>
+        </span>
+        <span class="MJX_Assistive_MathML" role="presentation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <msub><mi>E</mi><mi>g</mi></msub><mo>=</mo>
+            </math>
+        </span>
+    </span>
+    <script type="math/tex" id="MathJax-Element-24">E_g=</script> 
+    <span id="Eg_txt">1.12</span> eV;  
+    <span id="MathJax-Element-25-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 101%; position: relative;">
+        <span class="mjx-math" aria-hidden="true">
+            <span class="mjx-msubsup">
+                <span class="mjx-mi">n<sub>i</sub></span>
+                
+            </span>
+            <span class="mjx-mo">=</span>
+        </span>
+        <span class="MJX_Assistive_MathML" role="presentation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <msub><mi>n</mi><mi>i</mi></msub><mo>=</mo>
+            </math>
+        </span>
+    </span>
+    <script type="math/tex" id="MathJax-Element-25">n_i=</script> 
+    <span id="ni_txt">6.41e+9</span> cm<sup>-3</sup>;  
+    <span id="MathJax-Element-26-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 101%; position: relative;">
+        <span class="mjx-math" aria-hidden="true">
+            <span class="mjx-msubsup">
+                <span class="mjx-mi">V<sub>bi</sub></span>
+               
+            </span>
+            <span class="mjx-mo">=</span>
+        </span>
+        <span class="MJX_Assistive_MathML" role="presentation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <msub><mi>V</mi><mrow><mi>b</mi><mi>i</mi></mrow></msub><mo>=</mo>
+            </math>
+        </span>
+    </span>
+    <script type="math/tex" id="MathJax-Element-26">V_{bi}=</script> 
+    <span id="Vbi_txt">0.856</span> V;  
+    <span id="MathJax-Element-27-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 101%; position: relative;">
+        <span class="mjx-math" aria-hidden="true">
+            <span class="mjx-msubsup">
+                <span class="mjx-mi">I<sub>P</sub></span>
+                
+            </span>
+            <span class="mjx-mo">=</span>
+        </span>
+        <span class="MJX_Assistive_MathML" role="presentation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <msub><mi>I</mi><mi>p</mi></msub><mo>=</mo>
+            </math>
+        </span>
+    </span>
+    <script type="math/tex" id="MathJax-Element-27">I_p=</script> 
+    <span id="Ip_txt">0.000444</span> A;  
+    <span id="MathJax-Element-28-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 101%; position: relative;">
+        <span class="mjx-math" aria-hidden="true">
+            <span class="mjx-msubsup">
+                <span class="mjx-mi">V<sub>p</sub></span>
+                
+            </span>
+            <span class="mjx-mo">=</span>
+        </span>
+        <span class="MJX_Assistive_MathML" role="presentation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <msub><mi>V</mi><mi>p</mi></msub><mo>=</mo>
+            </math>
+        </span>
+    </span>
+    <script type="math/tex" id="MathJax-Element-28">V_p=</script> 
+    <span id="Vp_txt">6.84</span> V.
+</p>
 
 <script>
 plotn();
@@ -576,22 +702,5 @@ plotn();
 </div>
    <!--simulation end -->
    
-
-    <div class="container p-3 my-5 text-primary text-center border"><!--Last and fifth container under body tag start-->
-      <div class="row">
-        <footer>
-          <div class="row ce">
-            <div class="col-sm-12">
-              <p class="h5"><i> Copyright ©2022 <a href="http://vlabs.iitkgp.ac.in/vlt/">Virtual Labs IIT Kharagpur</a> </i><br><br>
-              <a href="../../license/index.html" target="_blank"> Licensing Terms </a>
-            </p>
-            </div>
-          </div>
-        </footer>
-      </div>
-  </div><!--Last and fifth container under body tag end-->
-
-  
-	 
 </body><!--body tag end-->
 </html><!--html tag end-->
