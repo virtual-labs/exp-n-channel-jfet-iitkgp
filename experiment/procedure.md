@@ -25,9 +25,9 @@ Circuit Diagram
 The experimental setup consists of a basic circuit to measure the output characteristics of the n-channel JFET. The circuit is as follows:
 
 1.  Connect the source terminal of the JFET to the ground.
-2.  Connect a variable DC power supply between the drain and source terminals, allowing control of the drain-source voltage ($$V_{DS}$$).
-3.  Insert a resistor (RD) in series with the drain terminal to limit the current and measure the drain current ($$I_D$$) indirectly.
-4.  Connect the gate terminal to another variable DC power supply to adjust the gate-source voltage ($$V_{GS}$$).
+2.  Connect a variable DC power supply between the drain and source terminals, allowing control of the drain-source voltage (V<sub>DS</sub>).
+3.  Insert a resistor (RD) in series with the drain terminal to limit the current and measure the drain current (I<sub>D</sub>) indirectly.
+4.  Connect the gate terminal to another variable DC power supply to adjust the gate-source voltage (V<sub>GS</sub>).
 
 Procedure
 ---------
@@ -38,37 +38,37 @@ Assemble the circuit on a breadboard as per the circuit diagram. Ensure all conn
 
 ### Initial Calibration
 
-1.  Set the gate-source voltage ($$V_{GS}$$) to zero volts ($$V_{GS}$$ = 0V).
-2.  Adjust the drain-source voltage ($$V_{DS}$$) using the power supply and measure the corresponding drain current ($$I_D$$) using a digital multimeter. Record the values.
+1.  Set the gate-source voltage (V<sub>GS</sub>) to zero volts (V<sub>GS</sub> = 0V).
+2.  Adjust the drain-source voltage (V<sub>DS</sub>) using the power supply and measure the corresponding drain current (I<sub>D</sub>) using a digital multimeter. Record the values.
 
-### Varying $$V_{DS}$$
+### Varying V<sub>DS</sub>
 
-Incrementally increase $$V_{DS}$$ from 0V to a higher value (e.g., 20V) in small steps (e.g., 1V or 2V). For each $$V_{DS}$$ value, measure and record the corresponding $$I_D$$.
+Incrementally increase V<sub>DS</sub> from 0V to a higher value (e.g., 20V) in small steps (e.g., 1V or 2V). For each V<sub>DS</sub> value, measure and record the corresponding I<sub>D</sub>.
 
-### Varying $$V_{GS}$$
+### Varying V<sub>GS</sub>
 
-Repeat the above steps for different values of VGS (e.g., -1V, -2V, -3V). For each VGS value, vary $$V_{DS}$$ and record the corresponding $$I_D$$.
+Repeat the above steps for different values of VGS (e.g., -1V, -2V, -3V). For each VGS value, vary V<sub>DS</sub> and record the corresponding I<sub>D</sub>.
 
 ### Data Analysis
 
-Plot the drain current ($$I_D$$) versus drain-source voltage ($$V_{DS}$$) for each value of gate-source voltage ($$V_{GS}$$) on a graph. Identify the different regions of operation (ohmic, active, and cutoff regions) from the plotted curves.
+Plot the drain current (I<sub>D</sub>) versus drain-source voltage (V<sub>DS</sub>) for each value of gate-source voltage (V<sub>GS</sub>) on a graph. Identify the different regions of operation (ohmic, active, and cutoff regions) from the plotted curves.
 
 Observations
 ------------
 
-*   In the **ohmic region**, the $$I_D$$ increases linearly with $$V_{DS}$$ for small values of $$V_{DS}$$, indicating that the JFET operates like a variable resistor.
-*   In the **active region**, the $$I_D$$ reaches a saturation point and becomes relatively independent of $$V_{DS}$$, indicating the current saturation behavior of the JFET.
-*   In the **cutoff region**, for sufficiently negative $$V_{GS}$$ values, the $$I_D$$ approaches zero, indicating that the JFET is off.
+*   In the **ohmic region**, the I<sub>D</sub> increases linearly with V<sub>DS</sub> for small values of V<sub>DS</sub>, indicating that the JFET operates like a variable resistor.
+*   In the **active region**, the I<sub>D</sub> reaches a saturation point and becomes relatively independent of V<sub>DS</sub>, indicating the current saturation behavior of the JFET.
+*   In the **cutoff region**, for sufficiently negative V<sub>GS</sub> values, the I<sub>D</sub> approaches zero, indicating that the JFET is off.
 
 Conclusion
 ----------
 
-From the experiment, the output characteristics of the n-channel JFET were successfully measured and analyzed. The $$I_D$$ vs. $$V_{DS}$$ curves for different VGS values provide insight into the device's behavior under varying conditions. The JFET's operation was observed in the ohmic, active, and cutoff regions, confirming the theoretical expectations.
+From the experiment, the output characteristics of the n-channel JFET were successfully measured and analyzed. The I<sub>D</sub> vs. V<sub>DS</sub> curves for different VGS values provide insight into the device's behavior under varying conditions. The JFET's operation was observed in the ohmic, active, and cutoff regions, confirming the theoretical expectations.
 
 Precautions
 -----------
 
-*   Ensure the JFET is not exposed to excessive $$V_{DS}$$ or $$V_{GS}$$ to avoid damage.
+*   Ensure the JFET is not exposed to excessive V<sub>DS</sub> or V<sub>GS</sub> to avoid damage.
 *   Use appropriate resistor values to limit the current and prevent overheating.
 *   Double-check all connections before powering the circuit to prevent short circuits or incorrect measurements.
 
