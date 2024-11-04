@@ -11,7 +11,7 @@ Structure and Operation
 
 An n-channel JFET consists of a channel of n-type semiconductor material with p-type regions diffused on either side, forming p-n junctions. These p-type regions are connected to the gate terminal, while the n-type channel connects the source and drain terminals. When a voltage is applied between the drain and source (V<sub>DS</sub>), electrons flow from the source to the drain, constituting the drain current (I<sub>D</sub>).
 
-Gate-Source Voltage (V<sub>GS<sub>) Influence
+Gate-Source Voltage (V<sub>GS</sub>) Influence
 -----------------------------------
 
 The gate-source voltage (V<sub>GS</sub>) is crucial in controlling the channel's conductivity. For an n-channel JFET, a negative VGS depletes the channel of electrons, reducing the current flow. When V<sub>GS</sub> is zero, the JFET operates at its maximum current for a given V<sub>DS</sub>. As V<sub>GS</sub> becomes more negative, the channel narrows, restricting the current flow until the channel is completely pinched off, and the current becomes minimal.
