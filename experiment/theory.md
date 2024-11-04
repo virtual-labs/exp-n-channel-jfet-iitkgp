@@ -11,7 +11,7 @@ Structure and Operation
 
 An n-channel JFET consists of a channel of n-type semiconductor material with p-type regions diffused on either side, forming p-n junctions. These p-type regions are connected to the gate terminal, while the n-type channel connects the source and drain terminals. When a voltage is applied between the drain and source (V<sub>DS</sub>), electrons flow from the source to the drain, constituting the drain current (I<sub>D</sub>).
 
-Gate-Source Voltage ($$V_{GS}$$) Influence
+Gate-Source Voltage (V<sub>GS<sub>) Influence
 -----------------------------------
 
 The gate-source voltage (V<sub>GS</sub>) is crucial in controlling the channel's conductivity. For an n-channel JFET, a negative VGS depletes the channel of electrons, reducing the current flow. When V<sub>GS</sub> is zero, the JFET operates at its maximum current for a given V<sub>DS</sub>. As V<sub>GS</sub> becomes more negative, the channel narrows, restricting the current flow until the channel is completely pinched off, and the current becomes minimal.
@@ -57,7 +57,7 @@ $$I_D = I_{DSS} (1 - V_{GS} / V_P)^2$$
 
 where I<sub>DSS</sub> is the drain-source saturation current when V<sub>GS</sub> = 0, and VP is the pinch-off voltage. This quadratic relationship highlights the sensitivity of I<sub>D</sub> to changes in V<sub>GS</sub>, emphasizing the importance of gate control in JFET operation.
 
-In summary, the theory behind the output characteristics of an n-channel JFET involves understanding the influence of VGS and VDS on the drain current ($$I_D$$). By analyzing the different regions of operation and their corresponding behavior, one can effectively utilize the n-channel JFET in various electronic applications, ensuring optimal performance and reliability.
+In summary, the theory behind the output characteristics of an n-channel JFET involves understanding the influence of VGS and VDS on the drain current (I<sub>D</sub>). By analyzing the different regions of operation and their corresponding behavior, one can effectively utilize the n-channel JFET in various electronic applications, ensuring optimal performance and reliability.
 
 The expression for the drain current of a n-channel JFET in the linear regime is,
 
