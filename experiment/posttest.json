@@ -1,39 +1,116 @@
-{
-  "version": 2.0,
+
+  {
+	  "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "1. What is the role of the gate terminal in an n-channel JFET?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "To control the flow of electrons between the source and drain",
+		"b": "To provide a constant current",
+		"c": "To dissipate heat",
+		"d": "To increase the voltage gain"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "2. How does the drain current (I_D) respond to an increase in the drain-source voltage (V_DS) in the ohmic region of an n-channel JFET?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "I_D remains constant",
+		"b": "I_D increases linearly",
+		"c": "I_D decreases linearly",
+		"d": "I_D increases exponentially"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. What happens to the depletion region in an n-channel JFET when the gate-source voltage (V_GS) is made more negative?",
+      "answers": {
+        "a": "Depletion region narrows",
+		"b": "Depletion region widens",
+		"c": "Depletion region remains unchanged",
+		"d": "Depletion region oscillates"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. In the cutoff region of an n-channel JFET, what is the approximate value of the drain current (I_D)?",
+      "answers": {
+        "a": "Maximum",
+		"b": "Half of the maximum",
+		"c": "Zero",
+		"d": "Double the maximum"
       },
       "correctAnswer": "c",
-      "difficulty": "beginner"
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "5. Which parameter of an n-channel JFET is defined as the voltage difference between the source and the drain when the gate-source voltage (V_GS) is zero?",
+      "answers": {
+        "a": "Pinch-off voltage (V_P)",
+		"b": "Threshold voltage (V_T)",
+		"c": "Breakdown voltage (V_BR)",
+		"d": "Saturation voltage (V_SAT)"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "6. In the context of n-channel JFETs, what is transconductance (g_m)?",
+      "answers": {
+        "a": "The ratio of drain current to drain-source voltage",
+		"b": "The ratio of drain current to gate-source voltage",
+		"c": "The ratio of gate current to gate-source voltage",
+		"d": "The ratio of source current to gate-source voltage"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "7. What is the effect of increasing the gate-source voltage (V_GS) beyond the pinch-off voltage (V_P) in an n-channel JFET?",
+      "answers": {
+        "a": "Increases drain current (I_D)",
+		"b": "Decreases drain current (I_D)",
+		"c": "Cuts off drain current (I_D)",
+		"d": "Has no effect on drain current (I_D)"
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "8. In an n-channel JFET, what condition signifies that the device is in the active or saturation region?",
+      "answers": {
+        "a": "V_DS < V_GS",
+		"b": "V_DS = V_GS",
+		"c": "V_DS > V_GS",
+		"d": "V_DS is negative"
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "9. What happens to the channel of an n-channel JFET as the gate-source voltage (V_GS) becomes more negative?",
+      "answers": {
+        "a": "Channel widens",
+		"b": "Channel narrows",
+		"c": "Channel lengthens",
+		"d": "Channel shortens"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "10. In an n-channel JFET, what is the relationship between the drain-source voltage (V_DS) and the drain current (I_D) in the breakdown region?",
+      "answers": {
+        "a": "I_D increases linearly with V_DS",
+		"b": "I_D decreases linearly with V_DS",
+		"c": "I_D remains constant regardless of V_DS",
+		"d": "I_D increases rapidly with V_DS"
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
     }
   ]
 }

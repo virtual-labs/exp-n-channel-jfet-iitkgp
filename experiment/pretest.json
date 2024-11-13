@@ -1,39 +1,115 @@
-{
-  "version": 2.0,
+  {
+	  "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "1. What is the typical shape of the output characteristic curve for an n-channel JFET?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Linear",
+        "b": "Parabolic",
+        "c": "Hyperbolic",
+        "d": "Exponential"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "2. In the ohmic region of an n-channel JFET, the device behaves like a:",
+      "answers": {
+        "a": "Current source",
+        "b": "Voltage source",
+        "c": "Resistor",
+        "d": "Capacitor"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. What happens to the drain current (I_D) when the gate-source voltage (V_GS) is made more negative?",
+      "answers": {
+        "a": "I_D increases",
+        "b": "I_D decreases",
+        "c": "I_D remains constant",
+        "d": "I_D oscillates"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. What is the pinch-off voltage (V_P) in an n-channel JFET?",
+      "answers": {
+        "a": "The voltage at which the channel is fully open",
+        "b": "The voltage at which the channel is fully closed",
+        "c": "The voltage at which the drain current starts to decrease",
+        "d": "The voltage at which the gate-source junction becomes forward biased"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "5. In which region of an n-channel JFET is the drain current (I_D) relatively independent of the drain-source voltage (V_DS)?",
+      "answers": {
+        "a": "Ohmic region",
+		"b": "Saturation region",
+		"c": "Cutoff region",
+		"d": "Breakdown region"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "6. What is the primary factor controlling the drain current (I_D) in the saturation region of an n-channel JFET?",
+      "answers": {
+        "a": "Drain-source voltage (V_DS)",
+		"b": "Gate-source voltage (V_GS)",
+		"c": "Temperature",
+		"d": "Channel length"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "7. How does the transconductance (g_m) of an n-channel JFET vary with the gate-source voltage (V_GS)?",
+      "answers": {
+        "a": "Increases linearly",
+		"b": "Decreases linearly",
+		"c": "Increases exponentially",
+		"d": "Decreases exponentially"
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "8. What is the relationship between the drain current (I_D) and the gate-source voltage (V_GS) in the saturation region for an n-channel JFET?",
+      "answers": {
+       "a": "I_D is directly proportional to V_GS",
+		"b": "I_D is inversely proportional to V_GS",
+		"c": "I_D is proportional to the square of (V_GS - V_P)",
+		"d": "I_D is proportional to the exponential of V_GS"
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "9. What is the effect of temperature on the output characteristics of an n-channel JFET?",
+      "answers": {
+       "a": "Increases I_D",
+		"b": "Decreases I_D",
+		"c": "No effect on I_D",
+		"d": "Causes I_D to oscillate"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "10. In an n-channel JFET, when the gate-source voltage (V_GS) is zero, the device operates in which region?",
+      "answers": {
+        "a": "Ohmic region",
+		"b": "Saturation region",
+		"c": "Cutoff region",
+		"d": "Breakdown region"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
     }
   ]
 }

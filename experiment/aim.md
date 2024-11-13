@@ -1,1 +1,2 @@
-### Aim of the experiment
+## Aim of experiment
+By measuring the drain current (I<sub>D</sub>) as a function of the drain-source voltage (V<sub>DS</sub>) for various gate-source voltage (V<sub>GS</sub>) settings. The aim is to understand the device's behavior in different regions of operation, including the ohmic, active (saturation), and cutoff regions, and to analyze how these characteristics can be utilized in practical electronic applications.
