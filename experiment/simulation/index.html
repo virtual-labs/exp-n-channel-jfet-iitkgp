@@ -22,16 +22,7 @@
 
 
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+       
         form {
             background-color: #ffffff;
             padding: 20px;
@@ -44,12 +35,9 @@
             width: 100%;
             border-collapse: collapse;
         }
-        td {
-            padding: 5px;
-            border-bottom: 1px solid #ddd;
-        }
+       
         td:first-child {
-            text-align: right;
+            text-align: left;
             font-weight: bold;
             color: #555;
         }
@@ -182,53 +170,65 @@ background-color: black;
 </head>
 <body><!--body tag start-->
    
-    <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
-        <div class="row"><!--First row under 3rd container start-->
-            <div class="col-md-1"></div><!--First col under 3rd container start & end-->
-            <div class="col-md-10"><!--2nd col under 3rd container start-->
-                <p class="text-center bg-success"> 
-                    <a class="nav-link" data-bs-toggle="tab" id="instcontrol" style="background-color:#128BD9">
-                        <span class="h3 text-dark"> Instructions </span>
-                    </a>
-                    <div id="inst" style="display:block; max-height:70vh; overflow-y:auto; text-align:justify;">
-                        <!-- Instructions START -->
-                        <p>Follow these steps to perform the n-channel JFET simulation:</p>
-                        <ol>
-                            <li>Go to the simulation.</li>
-                            <li>Input the following parameters as shown in the input boxes:
-                                <ul>
-                                    <li><b>N<sub>c</sub></b>: Effective density of states in the conduction band (measured in cm⁻³)</li>
-                                    <li><b>N<sub>v</sub></b>: Effective density of states in the valence band (measured in cm⁻³)</li>
-                                    <li><b>E<sub>g</sub></b>: Energy bandgap of the semiconductor (measured in electronvolts, eV)</li>
-                                    <li><b>N<sub>D</sub></b>: Donor concentration (measured in cm⁻³), which refers to the number of donor atoms per unit volume</li>
-                                    <li><b>N<sub>A</sub></b>: Acceptor concentration (measured in cm⁻³), which refers to the number of acceptor atoms per unit volume</li>
-                                    <li><b>μ<sub>n</sub></b>: Electron mobility (measured in cm²/V·s), which quantifies how quickly electrons can move through a semiconductor when an electric field is applied</li>
-                                    <li><b>h</b>: Thickness of the semiconductor layer (measured in micrometers, μm)</li>
-                                    <li><b>L</b>: Length of the semiconductor device (measured in micrometers, μm)</li>
-                                    <li><b>Z</b>: Width of the semiconductor device (measured in micrometers, μm)</li>
-                                    <li><b>ε<sub>r</sub></b>: Relative permittivity (also known as the dielectric constant) of the semiconductor material</li>
-                                    <li><b>T</b>: Temperature of the semiconductor material (Kelvin, K)</li>
-                                    <li><b>V<sub>D(min)</sub></b>: Minimum drain voltage (measured in volts, V) required for the operation of the device</li>
-                                    <li><b>V<sub>g</sub></b>: Gate voltage (measured in volts, V), which is the voltage applied to the gate terminal of a transistor</li>
-                                </ul>
-                            </li>
-                            <li>Once all parameters are entered, click the <b>Replot</b> button to generate the IV characteristics curves.</li>
-                            <li>Observe the plot of I<sub>D</sub> (drain current) vs V<sub>D</sub> (drain voltage). The x-axis represents the drain voltage (V<sub>D</sub>) and the y-axis represents the drain current (I<sub>D</sub>).</li>
-                            <li>Use the buttons labeled <b>Si</b>, <b>Ge</b>, and <b>GaAs</b> to simulate the characteristics for different semiconductor materials.</li>
-                        </ol>
-                        <!-- Instructions STOP -->    
-                    </div>
-                </p> 
-            </div><!--2nd col under 3rd container end-->
-            <div class="col-md-1"></div><!--3rd col under 3rd container start & end-->
-        </div><!--First row under 3rd container end-->
-    </div><!--3rd Container under body tag end-->
-    
-	
-   <!--simulation start -->
-   <div>
- 
+    <body onload="abrupt();"><!--body tag start-->
 
+
+	
+        <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
+          <div class="row"><!--First row under 3rd container start-->
+            <div class="col-md-1"></div><!--First col under 3rd container start& end-->
+            <div class="col-md-10"><!--2nd col under 3rd container start-->
+                <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
+                  <div id="inst" style="display:block;height:200px;overflow-y:auto;text-align:justify">
+                        <ol>
+                        
+                <!-- Instructions -->
+                
+                <div class="container">
+            
+            
+            <div class="instructions">
+        <p>Follow these steps to perform the n-channel JFET simulation:</p>
+                            <ol>
+                                <li>Go to the simulation.</li>
+                                <li>Input the following parameters as shown in the input boxes:
+                                    <ul>
+                                        <li><b>N<sub>c</sub></b>: Effective density of states in the conduction band (measured in cm⁻³)</li>
+                                        <li><b>N<sub>v</sub></b>: Effective density of states in the valence band (measured in cm⁻³)</li>
+                                        <li><b>E<sub>g</sub></b>: Energy bandgap of the semiconductor (measured in electronvolts, eV)</li>
+                                        <li><b>N<sub>D</sub></b>: Donor concentration (measured in cm⁻³), which refers to the number of donor atoms per unit volume</li>
+                                        <li><b>N<sub>A</sub></b>: Acceptor concentration (measured in cm⁻³), which refers to the number of acceptor atoms per unit volume</li>
+                                        <li><b>μ<sub>n</sub></b>: Electron mobility (measured in cm²/V·s), which quantifies how quickly electrons can move through a semiconductor when an electric field is applied</li>
+                                        <li><b>h</b>: Thickness of the semiconductor layer (measured in micrometers, μm)</li>
+                                        <li><b>L</b>: Length of the semiconductor device (measured in micrometers, μm)</li>
+                                        <li><b>Z</b>: Width of the semiconductor device (measured in micrometers, μm)</li>
+                                        <li><b>ε<sub>r</sub></b>: Relative permittivity (also known as the dielectric constant) of the semiconductor material</li>
+                                        <li><b>T</b>: Temperature of the semiconductor material (Kelvin, K)</li>
+                                        <li><b>V<sub>D(min)</sub></b>: Minimum drain voltage (measured in volts, V) required for the operation of the device</li>
+                                        <li><b>V<sub>g</sub></b>: Gate voltage (measured in volts, V), which is the voltage applied to the gate terminal of a transistor</li>
+                                    </ul>
+                                </li>
+                                <li>Once all parameters are entered, click the <b>Replot</b> button to generate the IV characteristics curves.</li>
+                                <li>Observe the plot of I<sub>D</sub> (drain current) vs V<sub>D</sub> (drain voltage). The x-axis represents the drain voltage (V<sub>D</sub>) and the y-axis represents the drain current (I<sub>D</sub>).</li>
+                                <li>Use the buttons labeled <b>Si</b>, <b>Ge</b>, and <b>GaAs</b> to simulate the characteristics for different semiconductor materials.</li>
+                            </ol>
+       
+    </div>
+    
+        </div>
+    <!-- end instruction   -->
+                        <br><br>
+                        </ol>
+        
+                        
+                        
+               </div>
+                </p> 
+              </div><!--2nd col under 3rd container end-->
+              
+            <div class="col-md-1"></div><!--3rd col under 3rd container start& end-->
+          </div><!--First row under 3rd container end-->
+        </div><!--3rd Container under body tag end-->	
 
 <script type="text/x-mathjax-config;executed=true">
   MathJax.Hub.Config({
@@ -348,41 +348,42 @@ td.gray {background-color:cccccc}
 
 <table align="center"><tbody><tr><td>
 <table><tbody>
-<tr>
-    <td><i>I<sub>D</sub></i> [mA]</td>
-    <td>
-        <div id="placeholder" style="width: 500px; height: 400px; position: relative;">
-            <canvas class="flot-base" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
-            <div class="flot-text" style="position: absolute; inset: 0; font-size: smaller; color: rgb(84, 84, 84);">
-                <div class="flot-x-axis xAxis" style="position: absolute; inset: 0; display: block;">
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 27px;">0</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 73px;">1</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 119px;">2</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 165px;">3</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 211px;">4</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 258px;">5</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 304px;">6</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 350px;">7</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 396px;">8</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 442px;">9</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 486px;">10</div>
+    <tr>
+        <td>
+            <div id="graph-container" style="position: relative; width: 700px; height: 600px; margin: auto;">
+                <!-- Y-Axis Label -->
+                <div style="position: absolute; left: -40px; top: 50%; transform: translateY(-50%) rotate(-90deg); font-style: italic; font-size: 14px;">
+                    I<sub>D</sub> [mA]
                 </div>
-                <div class="flot-y-axis yAxis" style="position: absolute; inset: 0; display: block;">
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 369px; text-align: right;">0.00</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 308px; text-align: right;">0.02</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 246px; text-align: right;">0.04</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 185px; text-align: right;">0.06</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 123px; text-align: right;">0.08</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 61px; text-align: right;">0.10</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 0; text-align: right;">0.12</div>
+    
+                <div id="placeholder" style="width: 700px; height: 600px; display: flex; justify-content: center; align-items: center;">
+                    <canvas class="flot-base" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
+                    <div class="flot-text" style="position: absolute; inset: 0; font-size: smaller; color: rgb(84, 84, 84);">
+                        <div class="flot-y-axis yAxis" style="position: absolute; left: 40px; display: block;">
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 369px; text-align: right;">0.00</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 308px; text-align: right;">0.02</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 246px; text-align: right;">0.04</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 185px; text-align: right;">0.06</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 123px; text-align: right;">0.08</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 61px; text-align: right;">0.10</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 0; text-align: right;">0.12</div>
+                        </div>
+                    </div>
+                    <canvas class="flot-overlay" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
+                </div>
+    
+                <!-- X-Axis Label -->
+                <div style="position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); font-style: italic; font-size: 14px;">
+                    V<sub>D</sub> [V]
                 </div>
             </div>
-            <canvas class="flot-overlay" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
-        </div>
-    </td>
-</tr>
+        </td>
+    </tr>
+    
+    
+    
 
-<tr><td></td><td><p style="text-align:center"><i>V<sub>D</sub></i> [V]</p></td></tr></tbody></table>
+</tbody></table>
 </td><td>
     <form name="data">
         <table>
