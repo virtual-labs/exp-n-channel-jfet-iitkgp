@@ -9,6 +9,7 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" rel="stylesheet"> </script>
     
     <!-- Custom CSS -->
    
@@ -19,6 +20,55 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+       
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+       
+        td:first-child {
+            text-align: left;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        .center {
+            text-align: center;
+        }
+        .material-buttons {
+            margin-top: 20px;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -121,53 +171,65 @@ background-color: black;
 </head>
 <body><!--body tag start-->
    
-      <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
-      <div class="row"><!--First row under 3rd container start-->
-        <div class="col-md-1"></div><!--First col under 3rd container start& end-->
-        <div class="col-md-10"><!--2nd col under 3rd container start-->
-            <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
-              <div id="inst" style="display:block;height:200px;overflow-y:auto;text-align:justify">
-			 <!--  Instructions START -->
-					<p>Follow these steps to perform the n-channel JFET simulation:</p>
-        <ol>
-            <li>Go to the simulation.</li>
-            <li>Input the following parameters as shown in the input boxes:
-                <ul>
-                    <li><b>N<sub>c</sub></b>: Effective density of states in the conduction band (measured in cm⁻³)</li>
-                    <li><b>N<sub>v</sub></b>: Effective density of states in the valence band (measured in cm⁻³)</li>
-                    <li><b>E<sub>g</sub></b>: Energy bandgap of the semiconductor (measured in electronvolts, eV)</li>
-                    <li><b>N<sub>D</sub></b>: Donor concentration (measured in cm⁻³), which refers to the number of donor atoms per unit volume</li>
-                    <li><b>N<sub>A</sub></b>: Acceptor concentration (measured in cm⁻³), which refers to the number of acceptor atoms per unit volume</li>
-                    <li><b>μ<sub>n</sub></b>: Electron mobility (measured in cm²/V·s), which quantifies how quickly electrons can move through a semiconductor when an electric field is applied</li>
-                    <li><b>h</b>: Thickness of the semiconductor layer (measured in micrometers, μm)</li>
-                    <li><b>L</b>: Length of the semiconductor device (measured in micrometers, μm)</li>
-                    <li><b>Z</b>: Width of the semiconductor device (measured in micrometers, μm)</li>
-                    <li><b>ε<sub>r</sub></b>: Relative permittivity (also known as the dielectric constant) of the semiconductor material</li>
-                    <li><b>T</b>: temperature of the semiconductor material, Kelvin (K)</li>
-                    <li><b>V<sub>D(min)</sub></b>: Minimum drain voltage (measured in volts, V) required for the operation of the device</li>
-                    <li><b>V<sub>g</sub></b>: Gate voltage (measured in volts, V), which is the voltage applied to the gate terminal of a transistor</li>
-                    
-                </ul>
-            </li>
-            <li>Once all parameters are entered, click the <b>Replot</b> button to generate the IV characteristics curves.</li>
-            <li>Observe the plot of I<sub>D</sub> (drain current) vs V<sub>D</sub> (drain voltage). The x-axis represents the drain voltage (V<sub>D</sub>) and the y-axis represents the drain current (I<sub>D</sub>).</li>
-            <li>Use the buttons labeled <b>Si</b>, <b>Ge</b>, and <b>GaAs</b> to simulate the characteristics for different semiconductor materials.</li>
-        </ol>
-	
-				<!-- Instructions STOP -->	
-					
-		   </div>
-            </p> 
-          </div><!--2nd col under 3rd container end-->
-		  
-        <div class="col-md-1"></div><!--3rd col under 3rd container start& end-->
-      </div><!--First row under 3rd container end-->
-    </div><!--3rd Container under body tag end-->
-	
-   <!--simulation start -->
-   <div>
- 
+    <body onload="abrupt();"><!--body tag start-->
 
+
+	
+        <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
+          <div class="row"><!--First row under 3rd container start-->
+            <div class="col-md-1"></div><!--First col under 3rd container start& end-->
+            <div class="col-md-10"><!--2nd col under 3rd container start-->
+                <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
+                  <div id="inst" style="display:block;height:200px;overflow-y:auto;text-align:justify">
+                        <ol>
+                        
+                <!-- Instructions -->
+                
+                <div class="container">
+            
+            
+            <div class="instructions">
+        <p>Follow these steps to perform the n-channel JFET simulation:</p>
+                            <ol>
+                                <li>Go to the simulation.</li>
+                                <li>Input the following parameters as shown in the input boxes:
+                                    <ul>
+                                        <li><b>N<sub>c</sub></b>: Effective density of states in the conduction band (measured in cm⁻³)</li>
+                                        <li><b>N<sub>v</sub></b>: Effective density of states in the valence band (measured in cm⁻³)</li>
+                                        <li><b>E<sub>g</sub></b>: Energy bandgap of the semiconductor (measured in electronvolts, eV)</li>
+                                        <li><b>N<sub>D</sub></b>: Donor concentration (measured in cm⁻³), which refers to the number of donor atoms per unit volume</li>
+                                        <li><b>N<sub>A</sub></b>: Acceptor concentration (measured in cm⁻³), which refers to the number of acceptor atoms per unit volume</li>
+                                        <li><b>μ<sub>n</sub></b>: Electron mobility (measured in cm²/V·s), which quantifies how quickly electrons can move through a semiconductor when an electric field is applied</li>
+                                        <li><b>h</b>: Thickness of the semiconductor layer (measured in micrometers, μm)</li>
+                                        <li><b>L</b>: Length of the semiconductor device (measured in micrometers, μm)</li>
+                                        <li><b>Z</b>: Width of the semiconductor device (measured in micrometers, μm)</li>
+                                        <li><b>ε<sub>r</sub></b>: Relative permittivity (also known as the dielectric constant) of the semiconductor material</li>
+                                        <li><b>T</b>: Temperature of the semiconductor material (Kelvin, K)</li>
+                                        <li><b>V<sub>D(min)</sub></b>: Minimum drain voltage (measured in volts, V) required for the operation of the device</li>
+                                        <li><b>V<sub>g</sub></b>: Gate voltage (measured in volts, V), which is the voltage applied to the gate terminal of a transistor</li>
+                                    </ul>
+                                </li>
+                                <li>Once all parameters are entered, click the <b>Replot</b> button to generate the IV characteristics curves.</li>
+                                <li>Observe the plot of I<sub>D</sub> (drain current) vs V<sub>D</sub> (drain voltage). The x-axis represents the drain voltage (V<sub>D</sub>) and the y-axis represents the drain current (I<sub>D</sub>).</li>
+                                <li>Use the buttons labeled <b>Si</b>, <b>Ge</b>, and <b>GaAs</b> to simulate the characteristics for different semiconductor materials.</li>
+                            </ol>
+       
+    </div>
+    
+        </div>
+    <!-- end instruction   -->
+                        <br><br>
+                        </ol>
+        
+                        
+                        
+               </div>
+                </p> 
+              </div><!--2nd col under 3rd container end-->
+              
+            <div class="col-md-1"></div><!--3rd col under 3rd container start& end-->
+          </div><!--First row under 3rd container end-->
+        </div><!--3rd Container under body tag end-->	
 
 <script type="text/x-mathjax-config;executed=true">
   MathJax.Hub.Config({
@@ -184,78 +246,96 @@ background-color: black;
 
 <script language="JavaScript">
 
-var d1 = [];
-var Vg = [];
-var kB = 1.380658E-23/1.60217733E-19;
-var eps0 = 8.854187817E-12;
-var ec = 1.60217733E-19;
-
-function plotn() {
-  n = 0;
-  d1.length=0;   //this deletes all the points from the previous calculation
-  Vg.length=0;
-  T=eval(data.Temp.value);
-  Nc=eval(data.Nc.value)*1E6;  //convert to m-3
-  Nv=eval(data.Nv.value)*1E6;
-  Nd=eval(data.Nd.value)*1E6;
-  Na=eval(data.Na.value)*1E6;
-  if (Na<10*Nd) {alert("The p-doping of the gate should be much higher than the n-doping of the channel in an n-channel JFET.");}
-  Eg=eval(data.Eg.value);
-  document.getElementById('Eg_txt').innerHTML=Eg.toPrecision(3);
-  Mn=eval(data.Mn.value)/1E4;  //convert to m^2/V s
-  epsr=eval(data.eps.value);  
-  VD=eval(data.VD.value);
-  if (VD<0) {alert("The drain voltage should be positive to pinch off the channel.");}
-  h=eval(data.h.value)*1E-6;
-  L=eval(data.L.value)*1E-6;
-  Z=eval(data.Z.value)*1E-6;
-  ni = Math.sqrt(Nc*Nv)*Math.pow(T/300,3/2)*Math.exp(-Eg/(2*kB*T));
-  document.getElementById('ni_txt').innerHTML=(ni*1E-6).toPrecision(3);
-  Vbi = kB*T*Math.log(Na*Nd/(ni*ni));
-  document.getElementById('Vbi_txt').innerHTML=Vbi.toPrecision(3);
-  Ip = Mn*Nd*Nd*Z*ec*ec*h*h*h/(2*L*epsr*eps0);
-  document.getElementById('Ip_txt').innerHTML=Ip.toPrecision(3);
-  Vp = Nd*ec*h*h/(2*epsr*eps0);
-  document.getElementById('Vp_txt').innerHTML=Vp.toPrecision(3);
-  Vg[1]=eval(data.Vg1.value);
-  if (Vg[1]>0) {alert("The model is only valid if the pn-junction is reverse biased. Vg should be negative.");}
-  Vg[2]=eval(data.Vg2.value);
-  if (Vg[2]>0) {alert("The model is only valid if the pn-junction is reverse biased. Vg should be negative.");}
-  Vg[3]=eval(data.Vg3.value);
-  if (Vg[3]>0) {alert("The model is only valid if the pn-junction is reverse biased. Vg should be negative.");}
-  Vg[4]=eval(data.Vg4.value);
-  if (Vg[4]>0) {alert("The model is only valid if the pn-junction is reverse biased. Vg should be negative.");}
-  Vg[5]=eval(data.Vg5.value);
-  if (Vg[5]>0) {alert("The model is only valid if the pn-junction is reverse biased. Vg should be negative.");}
-  Vg[6]=eval(data.Vg6.value);
-  if (Vg[6]>0) {alert("The model is only valid if the pn-junction is reverse biased. Vg should be negative.");}
-
-
-for (j=1; j<7; j++) {
-  if (Vg[j]==0) {Vg[j]=1E-10;}
-  if (Vg[j]) {
-    for (k=0; k<201; k++) {
-      V = k*VD/200;
-      if (V< Vg[j]-Vbi+Vp) {
-        I = Ip*(V/Vp - (2/3)*Math.pow((Vbi+V-Vg[j])/Vp,1.5) + (2/3)*Math.pow((Vbi-Vg[j])/Vp,1.5));
+    var d1 = [];
+    var Vg = [];
+    var kB = 1.380658E-23 / 1.60217733E-19;
+    var eps0 = 8.854187817E-12;
+    var ec = 1.60217733E-19;
+    
+    function plotn() {
+      n = 0;
+      d1.length = 0;
+      Vg.length = 0;
+      T = eval(data.Temp.value);
+      Nc = eval(data.Nc.value) * 1E6;
+      Nv = eval(data.Nv.value) * 1E6;
+      Nd = eval(data.Nd.value) * 1E6;
+      Na = eval(data.Na.value) * 1E6;
+      if (Na < 10 * Nd) {
+        alert("The p-doping of the gate should be much higher than the n-doping of the channel in an n-channel JFET.");
       }
-      else {I = Ip*(1/3 - (Vbi-Vg[j])/Vp + (2/3)*Math.pow(((Vbi-Vg[j]))/Vp,1.5));}
-      d1[n]=[V,I*1000];
-      if (Vg[j]<-Vp) { d1[n]=[V,0];}
-      n++;
+      Eg = eval(data.Eg.value);
+      document.getElementById('Eg_txt').innerHTML = Eg.toPrecision(3);
+      Mn = eval(data.Mn.value) / 1E4;
+      epsr = eval(data.eps.value);
+      VD = eval(data.VD.value);
+      if (VD < 0) {
+        alert("The drain voltage should be positive to pinch off the channel.");
+      }
+      h = eval(data.h.value) * 1E-6;
+      L = eval(data.L.value) * 1E-6;
+      Z = eval(data.Z.value) * 1E-6;
+      ni = Math.sqrt(Nc * Nv) * Math.pow(T / 300, 3 / 2) * Math.exp(-Eg / (2 * kB * T));
+      document.getElementById('ni_txt').innerHTML = (ni * 1E-6).toPrecision(3);
+      Vbi = kB * T * Math.log(Na * Nd / (ni * ni));
+      document.getElementById('Vbi_txt').innerHTML = Vbi.toPrecision(3);
+      Ip = Mn * Nd * Nd * Z * ec * ec * h * h * h / (2 * L * epsr * eps0);
+      document.getElementById('Ip_txt').innerHTML = Ip.toPrecision(3);
+      Vp = Nd * ec * h * h / (2 * epsr * eps0);
+      document.getElementById('Vp_txt').innerHTML = Vp.toPrecision(3);
+      
+      var colors = ["#FF0000", "#00FF00", "#0000FF", "#FFA500", "#800080", "#008080"];
+      var plotData = [];
+      
+      for (let j = 1; j <= 6; j++) {
+        Vg[j] = eval(data[`Vg${j}`].value);
+        if (Vg[j] > 0) {
+          alert("The model is only valid if the pn-junction is reverse biased. Vg should be negative.");
+        }
+      }
+      
+      for (let j = 1; j <= 6; j++) {
+        let tempData = [];
+        if (Vg[j] == 0) Vg[j] = 1E-10;
+        if (Vg[j]) {
+          for (let k = 0; k < 201; k++) {
+            let V = k * VD / 200;
+            let I = 0;
+            if (V < Vg[j] - Vbi + Vp) {
+              I = Ip * (V / Vp - (2 / 3) * Math.pow((Vbi + V - Vg[j]) / Vp, 1.5) + (2 / 3) * Math.pow((Vbi - Vg[j]) / Vp, 1.5));
+            } else {
+              I = Ip * (1 / 3 - (Vbi - Vg[j]) / Vp + (2 / 3) * Math.pow(((Vbi - Vg[j])) / Vp, 1.5));
+            }
+            tempData.push([V, I * 1000]);
+            if (Vg[j] < -Vp) tempData.push([V, 0]);
+          }
+          plotData.push({ data: tempData, color: colors[j - 1], shadowSize: 0, lines: { show: true, lineWidth: 2 }, points: { show: true, radius: 3, fill: true, fillColor: colors[j - 1] } });
+        }
+      }
+    
+      var plot = $.plot($("#placeholder"), plotData, {
+        grid: { hoverable: true, clickable: true },
+        xaxis: { axisLabel: "Voltage (V)" },
+        yaxis: { axisLabel: "Current (mA)" }
+      });
+    
+      $("#placeholder").bind("plothover", function (event, pos, item) {
+        if (item) {
+          $("#tooltip").html("V: " + item.datapoint[0].toFixed(2) + " V<br>I: " + item.datapoint[1].toFixed(2) + " mA")
+            .css({ top: item.pageY + 5, left: item.pageX + 5 })
+            .fadeIn(200);
+        } else {
+          $("#tooltip").hide();
+        }
+      });
     }
-    d1[n]=null;  //starts a new line in the plot
-    n++;
-  }
-}
-
-    var data1 = [{ data: d1, color: "rgb(0, 0, 0)", shadowSize:0, lines: {show:true} }];
-
-    $.plot($("#placeholder"), data1);
-
-}
-
-</script>
+    
+    $(document).ready(function () {
+      $("body").append("<div id='tooltip' style='position: absolute; display: none; border: 1px solid #ccc; background: #fff; padding: 5px; font-size: 12px;'></div>");
+    });
+    
+    </script>
+    
 
 <style>
 p {margin-left:1cm;}
@@ -263,353 +343,157 @@ td.gray {background-color:cccccc}
 </style>
 
 
-
-
-
-
-<table align="center"><tbody><tr><td>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 text-center">
+            
 <table><tbody>
-<tr>
-    <td><i>I<sub>D</sub></i> [mA]</td>
-    <td>
-        <div id="placeholder" style="width: 500px; height: 400px; position: relative;">
-            <canvas class="flot-base" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
-            <div class="flot-text" style="position: absolute; inset: 0; font-size: smaller; color: rgb(84, 84, 84);">
-                <div class="flot-x-axis xAxis" style="position: absolute; inset: 0; display: block;">
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 27px;">0</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 73px;">1</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 119px;">2</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 165px;">3</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 211px;">4</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 258px;">5</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 304px;">6</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 350px;">7</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 396px;">8</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 442px;">9</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; left: 486px;">10</div>
+    <tr>
+        <td>
+            <div id="graph-container" style="position: relative; width: 700px; height: 600px; margin: auto;">
+                <!-- Y-Axis Label -->
+                <div style="position: absolute; left: -40px; top: 50%; transform: translateY(-50%) rotate(-90deg); font-style: italic; font-size: 14px;">
+                    I<sub>D</sub> [mA]
                 </div>
-                <div class="flot-y-axis yAxis" style="position: absolute; inset: 0; display: block;">
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 369px; text-align: right;">0.00</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 308px; text-align: right;">0.02</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 246px; text-align: right;">0.04</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 185px; text-align: right;">0.06</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 123px; text-align: right;">0.08</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 61px; text-align: right;">0.10</div>
-                    <div class="flot-tick-label tickLabel" style="position: absolute; top: 0; text-align: right;">0.12</div>
+    
+                <div id="placeholder" style="width: 700px; height: 600px; display: flex; justify-content: center; align-items: center;">
+                    <canvas class="flot-base" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
+                    <div class="flot-text" style="position: absolute; inset: 0; font-size: smaller; color: rgb(84, 84, 84);">
+                        <div class="flot-y-axis yAxis" style="position: absolute; left: 40px; display: block;">
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 369px; text-align: right;">0.00</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 308px; text-align: right;">0.02</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 246px; text-align: right;">0.04</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 185px; text-align: right;">0.06</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 123px; text-align: right;">0.08</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 61px; text-align: right;">0.10</div>
+                            <div class="flot-tick-label tickLabel" style="position: absolute; top: 0; text-align: right;">0.12</div>
+                        </div>
+                    </div>
+                    <canvas class="flot-overlay" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
+                </div>
+    
+                <!-- X-Axis Label -->
+                <div style="position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); font-style: italic; font-size: 14px;">
+                    V<sub>D</sub> [V]
                 </div>
             </div>
-            <canvas class="flot-overlay" width="500" height="400" style="position: absolute; left: 0; top: 0;"></canvas>
+        </td>
+    </tr>
+    
+    
+    
+
+</tbody></table>
         </div>
-    </td>
-</tr>
+        <div class="col-md-4">
+            
+    <form name="data">
+        <table >
+            <tr >
+                <td><span class="mjx-char MJXc-TeX-math-I">N<sub>c</sub> = </span></td>
+                <td><input size="10" value="2.78E19" name="Nc" type="text"> cm<sup>-3</sup> @ 300 K</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">N<sub>v</sub> = </span></td>
+                <td><input size="10" value="9.84E18" name="Nv" type="text"> cm<sup>-3</sup> @ 300 K</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">E<sub>g</sub> = </span></td>
+                <td><input size="25" value="1.166-4.73E-4*T*T/(T+636)" name="Eg" type="text"> eV</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">N<sub>D</sub> = </span></td>
+                <td><input size="10" value="1E15" name="Nd" type="text"> cm<sup>-3</sup></td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">N<sub>A</sub> = </span></td>
+                <td><input size="10" value="1E19" name="Na" type="text"> cm<sup>-3</sup></td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">μ<sub>n</sub> = </span></td>
+                <td><input size="10" value="1350" name="Mn" type="text"> cm<sup>2</sup>/Vs</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">h = </span></td>
+                <td><input size="10" value="3" name="h" type="text"> μm</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">L = </span></td>
+                <td><input size="10" value="100" name="L" type="text"> μm</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">Z = </span></td>
+                <td><input size="10" value="100" name="Z" type="text"> μm</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">ϵ<sub>r</sub> = </span></td>
+                <td><input size="10" value="11.9" name="eps" type="text"></td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">T = </span></td>
+                <td><input size="10" value="300" name="Temp" type="text"> K</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">V<sub>D</sub> (min) = </span></td>
+                <td><input type="text" size="10" value="10" name="VD"> V</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">V<sub>g</sub> [1] = </span></td>
+                <td><input type="text" size="10" value="0" name="Vg1"> V</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">V<sub>g</sub> [2] = </span></td>
+                <td><input type="text" size="10" value="-1" name="Vg2"> V</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">V<sub>g</sub> [3] = </span></td>
+                <td><input type="text" size="10" value="-2" name="Vg3"> V</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">V<sub>g</sub> [4] = </span></td>
+                <td><input type="text" size="10" value="-3" name="Vg4"> V</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">V<sub>g</sub> [5] = </span></td>
+                <td><input type="text" size="10" value="-4" name="Vg5"> V</td>
+            </tr>
+            <tr>
+                <td><span class="mjx-char MJXc-TeX-math-I">V<sub>g</sub> [6] = </span></td>
+                <td><input type="text" size="10" value="-5" name="Vg6"> V</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="center">
+                    <input type="button" onclick="plotn()" value="Replot">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="center material-buttons">
+                    <input type="button" value=" Si " onclick="setMaterial('2.78E19', '9.84E18', '1.166-4.73E-4*T*T/(T+636)', '1350', '11.9')">
+                    <input type="button" value=" Ge " onclick="setMaterial('1.04E19', '6.0E18', '0.7437-4.77E-4*T*T/(T+235)', '3900', '16.2')">
+                    <input type="button" value="GaAs" onclick="setMaterial('4.45E17', '7.72E18', '1.519-5.41E-4*T*T/(T+204)', '8500', '10.9')">
+                </td>
+            </tr>
+        </table>
+    </form>
 
-<tr><td></td><td><p style="text-align:center"><i>V<sub>D</sub></i> [V]</p></td></tr></tbody></table>
-</td><td>
-<form name="data">
+        </div>
+    </div>
 
-<table align="center" style="border-collapse:collapse">
-<tbody><tr><td class="gray">&nbsp;</td><td class="gray"></td></tr>
-
-
-
-  <tr>
-            <td class="gray" style="text-align:right;"><span class="mjx-char MJXc-TeX-math-I">N<sub>c</sub> = </span></td>
-            <td class="gray"><input size="10" value="2.78E19" name="Nc" type="text"> cm<sup>-3</sup> @ 300 K</td>
-        </tr>
-
-  <tr>
-            <td class="gray" style="text-align:right;"><span class="mjx-char MJXc-TeX-math-I">N<sub>v</sub> = </span></td>
-            <td class="gray"><input size="10" value="9.84E18" name="Nv" type="text"> cm<sup>-3</sup> @ 300 K</td>
-        </tr>
-
-   <tr>
-            <td class="gray" style="text-align:right;"><span class="mjx-char MJXc-TeX-math-I">E<sub>g</sub> = </span></td>
-            <td class="gray"><input size="25" value="1.166-4.73E-4*T*T/(T+636)" name="Eg" type="text"> eV</td>
-        </tr>
-
-  <tr>
-            <td class="gray" style="text-align:right;"><span class="mjx-char MJXc-TeX-math-I">N<sub>D</sub> = </span></td>
-            <td class="gray"><input size="10" value="1E15" name="Nd" type="text"> cm<sup>-3</sup></td>
-        </tr>
-
-<tr>
-            <td class="gray" style="text-align:right;"><span class="mjx-char MJXc-TeX-math-I">N<sub>A</sub> = </span></td>
-            <td class="gray"><input size="10" value="1E19" name="Na" type="text"> cm<sup>-3</sup></td>
-        </tr>
-
-
-
-
-
-
-<tr>
-  <td class="gray">
-    <p class="right">
-      <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-      <span id="MathJax-Element-11-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03BC;&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;">
-        <span id="MJXc-Node-325" class="mjx-math" aria-hidden="true">
-          <span id="MJXc-Node-326" class="mjx-mrow">
-            <span id="MJXc-Node-327" class="mjx-msubsup">
-              <span class="mjx-base">
-                <span id="MJXc-Node-328" class="mjx-mi">
-                  <span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em;">μ</span>
-                </span>
-              </span>
-              <span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;">
-                <span id="MJXc-Node-329" class="mjx-mi">
-                  <span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">n</span>
-                </span>
-              </span>
-            </span>
-            <span id="MJXc-Node-330" class="mjx-mo MJXc-space3">
-              <span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span>
-            </span>
-          </span>
-        </span>
-        <span class="MJX_Assistive_MathML" role="presentation">
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <msub>
-              <mi>μ</mi>
-              <mi>n</mi>
-            </msub>
-            <mo>=</mo>
-          </math>
-        </span>
-      </span>
-      <script type="math/tex" id="MathJax-Element-11">\mu_n=</script>
-    </p>
-  </td>
-  <td class="gray">
-    <input size="10" value="1350" name="Mn" type="text"> cm<sup>2</sup>/Vs
-  </td>
-</tr>
-
-<style>
-  .gray {
-    background-color: #cccccc;
-  }
-  .right {
-    text-align: right;
-    margin-right: 0;
-  }
-</style>
-
-
-
-
-
-
-
-
-
-<tr>
-            <td class="gray" style="text-align:right;"><span class="mjx-char MJXc-TeX-math-I">h = </span></td>
-            <td class="gray"><input size="10" value="3" name="h" type="text"> μm</td>
-        </tr>
-        <tr>
-            <td class="gray" style="text-align:right;"><span class="mjx-char MJXc-TeX-math-I">L = </span></td>
-            <td class="gray"><input size="10" value="100" name="L" type="text"> μm</td>
-        </tr>
-        <tr>
-            <td class="gray" style="text-align:right;"><span class="mjx-char MJXc-TeX-math-I">Z = </span></td>
-            <td class="gray"><input size="10" value="100" name="Z" type="text"> μm</td>
-        </tr>
-
-<tr>
-    <td class="gray">
-        <p style="text-align:right; margin-right:0cm;">
-            <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-            <span class="mjx-chtml MathJax_CHTML" tabindex="0">
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <msub><mi>ϵ</mi><mi>r</mi></msub><mo>=</mo>
-                </math>
-            </span>
-            <script type="math/tex">\epsilon_r=</script>
-        </p>
-    </td>
-    <td class="gray">
-        <input size="10" value="11.9" name="eps" type="text"> 
-    </td>
-</tr>
-<tr>
-    <td class="gray">
-        <p style="text-align:right; margin-right:0cm;">
-            <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-            <span class="mjx-chtml MathJax_CHTML" tabindex="0">
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <mi>T</mi><mo>=</mo>
-                </math>
-            </span>
-            <script type="math/tex">T=</script>
-        </p>
-    </td>
-    <td class="gray">
-        <input size="10" value="300" name="Temp" type="text"> K
-    </td>
-</tr>
-<tr>
-    <td class="gray">
-        <p style="text-align:right; margin-right:0cm;">
-            <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-            <span class="mjx-chtml MathJax_CHTML" tabindex="0">
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <msub><mi>V</mi><mi>D</mi></msub><mo>(</mo><mtext>min</mtext><mo>)</mo>
-                </math>
-            </span>
-            <script type="math/tex">V_D (\text{max})</script> = 
-        </p>
-    </td>
-    <td class="gray">
-        <input type="text" size="10" value="10" name="VD"> V
-    </td>
-</tr>
-
-<tr>
-    <td class="gray">
-        <p style="text-align:right; margin-right:0cm;">
-            <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-            <span class="mjx-chtml MathJax_CHTML" tabindex="0">
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <msub><mi>V</mi><mi>g</mi></msub>
-                </math>
-            </span>
-            <script type="math/tex">V_g</script> [1] = 
-        </p>
-    </td>
-    <td class="gray">
-        <input type="text" size="10" value="0" name="Vg1"> V
-    </td>
-</tr>
-<tr>
-    <td class="gray">
-        <p style="text-align:right; margin-right:0cm;">
-            <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-            <span class="mjx-chtml MathJax_CHTML" tabindex="0">
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <msub><mi>V</mi><mi>g</mi></msub>
-                </math>
-            </span>
-            <script type="math/tex">V_g</script> [2] = 
-        </p>
-    </td>
-    <td class="gray">
-        <input type="text" size="10" value="-1" name="Vg2"> V
-    </td>
-</tr>
-<tr>
-    <td class="gray">
-        <p style="text-align:right; margin-right:0cm;">
-            <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-            <span class="mjx-chtml MathJax_CHTML" tabindex="0">
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <msub><mi>V</mi><mi>g</mi></msub>
-                </math>
-            </span>
-            <script type="math/tex">V_g</script> [3] = 
-        </p>
-    </td>
-    <td class="gray">
-        <input type="text" size="10" value="-2" name="Vg3"> V
-    </td>
-</tr>
-
-<tr>
-    <td class="gray">
-        <p style="text-align:right; margin-right:0cm;">
-            <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-            <span class="mjx-chtml MathJax_CHTML" tabindex="0">
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <msub><mi>V</mi><mi>g</mi></msub>
-                </math>
-            </span>
-            <script type="math/tex">V_g</script> [4] = 
-        </p>
-    </td>
-    <td class="gray">
-        <input type="text" size="10" value="-3" name="Vg4"> V
-    </td>
-</tr>
-<tr>
-    <td class="gray">
-        <p style="text-align:right; margin-right:0cm;">
-            <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-            <span class="mjx-chtml MathJax_CHTML" tabindex="0">
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <msub><mi>V</mi><mi>g</mi></msub>
-                </math>
-            </span>
-            <script type="math/tex">V_g</script> [5] = 
-        </p>
-    </td>
-    <td class="gray">
-        <input type="text" size="10" value="-4" name="Vg5"> V
-    </td>
-</tr>
-<tr>
-    <td class="gray">
-        <p style="text-align:right; margin-right:0cm;">
-            <span class="MathJax_Preview" style="color: inherit; display: none;"></span>
-            <span class="mjx-chtml MathJax_CHTML" tabindex="0">
-                <math xmlns="http://www.w3.org/1998/Math/MathML">
-                    <msub><mi>V</mi><mi>g</mi></msub>
-                </math>
-            </span>
-            <script type="math/tex">V_g</script> [6] = 
-        </p>
-    </td>
-    <td class="gray">
-        <input type="text" size="10" value="-5" name="Vg6"> V
-    </td>
-</tr>
-
-<tr>
-  <td colspan="2" class="gray">
-    <p>&nbsp;</p>
-  </td>
-</tr>
-<tr>
-  <td colspan="2" class="gray">
-    <p class="center">
-      <input type="button" onclick="plotn()" value="Replot">
-    </p>
-  </td>
-</tr>
-<tr>
-  <td colspan="2" class="gray">
-    <p class="center">
-      <input type="button" value=" Si " onclick="setMaterial('2.78E19', '9.84E18', '1.166-4.73E-4*T*T/(T+636)', '1350', '11.9')">
-      <input type="button" value=" Ge " onclick="setMaterial('1.04E19', '6.0E18', '0.7437-4.77E-4*T*T/(T+235)', '3900', '16.2')">
-      <input type="button" value="GaAs" onclick="setMaterial('4.45E17', '7.72E18', '1.519-5.41E-4*T*T/(T+204)', '8500', '10.9')">
-    </p>
-  </td>
-</tr>
-
-<style>
-  .gray {
-    background-color: #cccccc;
-  }
-  .center {
-    text-align: center;
-  }
-</style>
+</div>
 
 <script>
-  function setMaterial(Nc, Nv, Eg, Mn, eps) {
-    document.data.Nc.value = Nc;
-    document.data.Nv.value = Nv;
-    document.data.Eg.value = Eg;
-    document.data.Mn.value = Mn;
-    document.data.eps.value = eps;
-    plotn();
-  }
+    function setMaterial(Nc, Nv, Eg, Mn, eps) {
+        document.data.Nc.value = Nc;
+        document.data.Nv.value = Nv;
+        document.data.Eg.value = Eg;
+        document.data.Mn.value = Mn;
+        document.data.eps.value = eps;
+        plotn();
+    }
 </script>
-</tbody></table>
-
-</form>
-
-
-</td></tr></tbody></table>
 <hr>
+
+
 <p>
     <span id="MathJax-Element-24-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 101%; position: relative;">
         <span class="mjx-math" aria-hidden="true">
